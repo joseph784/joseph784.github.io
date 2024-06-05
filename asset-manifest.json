@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/joseph784.github.io/static/css/main.fc847577.css",
+    "main.js": "/joseph784.github.io/static/js/main.6185a05e.js",
+    "static/js/787.1ed0c42c.chunk.js": "/joseph784.github.io/static/js/787.1ed0c42c.chunk.js",
+    "index.html": "/joseph784.github.io/index.html",
+    "main.fc847577.css.map": "/joseph784.github.io/static/css/main.fc847577.css.map",
+    "main.6185a05e.js.map": "/joseph784.github.io/static/js/main.6185a05e.js.map",
+    "787.1ed0c42c.chunk.js.map": "/joseph784.github.io/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc847577.css",
+    "static/js/main.6185a05e.js"
+  ]
+}
