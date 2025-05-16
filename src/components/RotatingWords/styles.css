@@ -1,5 +1,5 @@
 .word-animation {
-    font-size: 36px;
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
     text-align: center;
     overflow: hidden;
     position: relative;
@@ -58,3 +58,16 @@
     }
   }
   
+  /* Large screen optimization */
+  @media (min-width: 1600px) {
+    .word-animation {
+      font-size: 3rem;
+    }
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 480px) {
+    .word-animation {
+      font-size: 1.25rem;
+    }
+  }

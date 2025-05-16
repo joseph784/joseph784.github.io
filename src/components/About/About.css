@@ -56,10 +56,12 @@ p:hover {
 
 .wrapper {
 	min-width: min(40rem, 100%);
+	max-width: 90%;
+	margin: 0 auto;
 }
 
 .box {
-	font-size: 3vw;
+	font-size: clamp(1.2rem, 3.5vw, 1.8rem);
 	margin: max(1rem, 3vw);
 	border: 0.35rem solid;
 	padding: 3vw;
@@ -70,6 +72,14 @@ p:hover {
 .box:nth-child(2) {
 	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
 	animation: borderRadial var(--d) linear infinite forwards;
+}
+
+.skills-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 90%;
 }
 
 @keyframes borderRotate {
@@ -98,5 +108,40 @@ p:hover {
 	100% {
 		--gradX: 50%;
 		--gradY: 0%;
+	}
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+	.wrapper {
+		min-width: 90%;
+	}
+	
+	.box {
+		font-size: clamp(1.1rem, 4vw, 1.4rem);
+		padding: 4vw;
+	}
+}
+
+@media (max-width: 480px) {
+	.wrapper {
+		min-width: 95%;
+	}
+	
+	.box {
+		margin: 1rem;
+		padding: 1rem;
+	}
+}
+
+/* Large screen styles */
+@media (min-width: 1600px) {
+	.box {
+		font-size: clamp(1.4rem, 4vw, 2.2rem);
+		padding: 3.5vw;
+	}
+	
+	.skills-container .buttonClass {
+		font-size: 1.5rem;
 	}
 }

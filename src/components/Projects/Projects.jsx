@@ -1,9 +1,40 @@
 import ProjectCard from "./ProjectCard";
+import { useEffect, useState } from "react";
 
 export default function Projects(){
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
+    
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsLargeScreen(window.innerWidth >= 1600);
+        };
+        
+        // Initial check
+        checkScreenSize();
+        
+        // Add event listener
+        window.addEventListener('resize', checkScreenSize);
+        
+        // Cleanup
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
+    
     return (
-        <>
-            <div style={{display: "flex", justifyContent: "center", float: "left", flexWrap: "wrap"}}>
+        <div className="projects-grid" style={{
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+            maxWidth: "100vw",
+            margin: "0 auto",
+            padding: isLargeScreen ? "40px 0" : "20px 0"
+        }}>
+            <div className="row-container" style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                maxWidth: "1800px",
+                gap: isLargeScreen ? "30px" : "20px"
+            }}>
                 <ProjectCard 
                     Title={"Visual AI.d"} 
                     Description={"Application which summarizes large text into generated images, designed for storyboarding."}
@@ -29,6 +60,6 @@ export default function Projects(){
                     Class={"card card-4"}
                 />
             </div>
-        </>
+        </div>
     )
 }

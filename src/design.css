@@ -9,3 +9,19 @@
     display: table;
     clear: both;
   }
+
+  /* Responsive columns */
+  @media (max-width: 768px) {
+    .column {
+      width: 100%;
+    }
+  }
+
+  /* Container for better spacing */
+  .container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }

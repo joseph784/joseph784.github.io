@@ -1,0 +1,38 @@
+/* ...existing code... */
+
+/* Ensure all base containers are full width */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container, main, section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Make sure content is responsive */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-wrapper {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 1600px) {
+    /* Adjustments for extra wide screens */
+    .content-wrapper {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+/* ...existing code... */
