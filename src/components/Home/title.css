@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+@import url('https://fonts.cdnfonts.com/css/elegant-2');
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.video-background {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+  .video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+  }
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  .text-overlay h1 {
+    font-size: 5rem;
+    color: white;
+    font-family: system-ui;
+  }
+  
+  .intro-text {
+    text-align: left;
+    margin-bottom: -20px;
+    color: khaki;
+    width: 100%;
+  }
+
+@keyframes color-animation {
+    0% { color: white;  }
+    55% { color: rgb(118, 182, 166)}
+  }
+  
+  .color-change {
+    animation: color-animation 8s infinite; 
+  }
+
+#About, #Experience, #Projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Intersection ladder styling */
+.intersection-ladder {
+  pointer-events: none; /* Makes the ladder not block clicks */
+  transition: all 0.3s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .text-overlay h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-overlay h1 {
+    font-size: 3rem;
+  }
+  .intro-text {
+    text-align: center;
+  }
+  
+  /* Hide ladders on mobile */
+  .intersection-ladder {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-overlay h1 {
+    font-size: 2.5rem;
+  }
+}
+

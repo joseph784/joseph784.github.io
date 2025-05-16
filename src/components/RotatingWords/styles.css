@@ -1,0 +1,73 @@
+.word-animation {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .word-animation span {
+    display: inline-block;
+    opacity: 0;
+    position: relative;
+    animation: lens-flare-words 1s forwards;
+    animation-delay: calc(0.2s * var(--index));
+  }
+  
+  @keyframes lens-flare-words {
+    0% {
+      opacity: 0;
+      transform: scale(0.1);
+    }
+    80% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(0.85);
+    }
+  }
+  
+  .word-animation span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 20%, transparent 100%);
+    opacity: 20;
+    animation: lens-flare 2s forwards;
+    animation-delay: calc(0.3s * var(--index));
+    transform-origin: center;
+    pointer-events: none;
+  }
+  
+  @keyframes lens-flare {
+    0% {
+      opacity: 0;
+      transform: scale(0.1);
+    }
+    80% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+  
+  /* Large screen optimization */
+  @media (min-width: 1600px) {
+    .word-animation {
+      font-size: 3rem;
+    }
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 480px) {
+    .word-animation {
+      font-size: 1.25rem;
+    }
+  }
