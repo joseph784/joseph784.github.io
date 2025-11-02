@@ -43,7 +43,7 @@ export default function Contact({showContact, onClose}){
             <Button href={"https://www.linkedin.com/in/joseph-agarwal/"} target="_blank" className='buttonClass' variant="light-outline">
                 <img width={isMobile ? 35 : 45} src="linkedin.png" alt="LinkedIn" /> 
             </Button>
-            <Button href={"resume.pdf"} target="_blank" className='buttonClass' variant="light-outline">
+            <Button href={"Joseph_Agarwal_Resume.pdf"} target="_blank" className='buttonClass' variant="light-outline">
                 <img width={isMobile ? 35 : 45} src="resume.jpg" alt="Resume" /> 
             </Button>
           </Modal.Body> 
