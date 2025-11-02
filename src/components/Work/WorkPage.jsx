@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../../design.css'
 import Button from 'react-bootstrap/Button';
 import WorkCard from './WorkCard';
+import { experiences } from '../../data/experiences';
 
 export default function WorkPage({ isLargeScreen }){
     const [softwareTab, setSoftwareTab] = useState(true)
@@ -36,19 +37,22 @@ export default function WorkPage({ isLargeScreen }){
                     gap: isLargeScreen ? "30px" : "20px",
                     padding: "0 20px"
                 }}>
-                    <WorkCard 
-                        Company={"Tesla"}
-                        Title={"Software Engineering Intern"}
-                        Description={
-                        <> 
-                        • Developed ML Gradient Boost model to predict car repair parts <br />
-                        • Restructured routing service with .NET Factory injection to handle Optimus robotics<br />
-                        • Implemented speech recognition functionality for service note-taking with Angular and Redux <br />
-                        <b>Technologies Utilzed: C#, scikit, Python, Git, Kubernetes, Angular</b> 
-                        </>
-                        }
-                        Class={"card card-4"}
-                    />
+                    {experiences.software.map(exp => (
+                        <WorkCard 
+                            key={exp.id}
+                            Company={exp.company}
+                            Title={exp.title}
+                            Description={
+                                <> 
+                                    {exp.description.map((desc, i) => (
+                                        <span key={i}>• {desc}<br /></span>
+                                    ))}
+                                    {exp.technologies && <b>Technologies Utilized: {exp.technologies}</b>}
+                                </>
+                            }
+                            Class={exp.cardClass}
+                        />
+                    ))}
                     <WorkCard 
                         Company={"Powerex"}
                         Title={"Software Developer Intern"}
@@ -114,18 +118,21 @@ export default function WorkPage({ isLargeScreen }){
                     gap: isLargeScreen ? "30px" : "20px",
                     padding: "0 20px"
                 }}>
-                    <WorkCard 
-                        Company={"IMUNA"}
-                        Title={"Undersecretary General"}
-                        Description={
-                        <> 
-                        • Executive staff, overseeing logistics of largest MUN conference in world <br />
-                        • Collaborated with UN Missions to resolve operational challenges <br />
-                        • Directly managed 20 undergraduate students, facilitating publication of 20+ educational guides
-                        </>
-                        }
-                        Class={"card card-1"}
-                    />
+                    {experiences.business.map(exp => (
+                        <WorkCard 
+                            key={exp.id}
+                            Company={exp.company}
+                            Title={exp.title}
+                            Description={
+                                <> 
+                                    {exp.description.map((desc, i) => (
+                                        <span key={i}>• {desc}<br /></span>
+                                    ))}
+                                </>
+                            }
+                            Class={exp.cardClass}
+                        />
+                    ))}
                     <WorkCard 
                         Company={"UBC Social Enterprise Club"}
                         Title={"Vice President, Conference"}

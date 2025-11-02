@@ -10,13 +10,10 @@ export default function ProjectCard({Title, Description, Class, Company}){
             setIsLargeScreen(window.innerWidth >= 1600);
         };
         
-        // Initial check
         checkScreenSize();
         
-        // Add event listener
         window.addEventListener('resize', checkScreenSize);
         
-        // Cleanup
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
 

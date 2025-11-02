@@ -59,6 +59,12 @@ export default function Projects(){
                     Link={""}
                     Class={"card card-4"}
                 />
+                <ProjectCard 
+                    Title={"Distributed Warehouse Storage"} 
+                    Description={"PostGreSQL distributed storage across 5 nodes, scheduled via SLURM."}
+                    Link={"https://github.com/joseph784/CS4224"}
+                    Class={"card card-3"}
+                />
             </div>
         </div>
     )

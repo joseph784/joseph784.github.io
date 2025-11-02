@@ -9,14 +9,10 @@ export default function AboutPage({ isLargeScreen }){
         const checkMobile = () => {
             setIsMobile(window.innerWidth <= 768);
         };
-        
-        // Initial check
         checkMobile();
         
-        // Add event listener
         window.addEventListener('resize', checkMobile);
         
-        // Cleanup
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
@@ -34,8 +30,8 @@ export default function AboutPage({ isLargeScreen }){
                     padding: isLargeScreen ? '4vw' : undefined,
                     lineHeight: '1.5'
                 }}>
-                    <p>I'm Joseph, a 5th year student, studying computer science and business at the University of British Columbia. I am currently a software intern at Tesla, and post-trade lead for the UBC Quant Team. I
-                    love the interplay of technology and people and am always excited to creatively solve real problems with 
+                    <p>I'm Joseph, I study computer science and business at the University of British Columbia. I interned as a SWE @ Tesla and now I lead the UBC Quant Team - Post Trade Division. I
+                    love the interplay of technology and people, and I'm excited to creatively solve real problems with 
                     software. 
                     </p>
                 </div>
@@ -60,15 +56,16 @@ export default function AboutPage({ isLargeScreen }){
                 fontSize: isMobile ? '2rem' : (isLargeScreen ? '3.5rem' : '2.5rem')
             }}>Programs/Frameworks</h1>
             <div className="skills-container">
-                <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>ASP.NET CORE</Button>{' '}
-                <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>React.js</Button>{' '}
-                <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>Angular.js</Button>{' '}
+                <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>.NET</Button>{' '}
+                <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>Node</Button>{' '}
+                <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>React</Button>{' '}
+                <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>Angular</Button>{' '}
                 <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>SciKit</Button>{' '}
                 <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>Git</Button>{' '}
                 <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>Kubernetes</Button>{' '}
                 <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>Jenkins</Button>{' '}
                 <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>Kafka</Button>{' '}
-
+                <Button className='buttonClass' variant="outline-light" size={isMobile ? "sm" : (isLargeScreen ? "lg" : "md")}>Docker</Button>{' '}
 
 
 

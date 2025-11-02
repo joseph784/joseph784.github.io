@@ -1,5 +1,4 @@
 import AboutPage from "../About/AboutPage";
-import WorkPage from "../Work/WorkPage";
 import RotatingWords from "../RotatingWords/RotatingWords";
 import './title.css'
 import NavButton from "../Buttons/NavButton";
@@ -7,24 +6,18 @@ import Projects from "../Projects/Projects";
 import { Button } from "react-bootstrap";
 import Contact from "../Contact/Contact";
 import { useState, useEffect } from "react";
+import TimelineEx from "../Timeline/Timeline";
 
 export default function HomePage(){
     const [isMobile, setIsMobile] = useState(false);
     const [isLargeScreen, setIsLargeScreen] = useState(false);
-    
     useEffect(() => {
         const checkScreenSize = () => {
             setIsMobile(window.innerWidth <= 768);
             setIsLargeScreen(window.innerWidth >= 1600);
         };
-        
-        // Initial check
         checkScreenSize();
-        
-        // Add event listener
         window.addEventListener('resize', checkScreenSize);
-        
-        // Cleanup
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
 
@@ -39,14 +32,12 @@ export default function HomePage(){
                 window.scrollTo({top: 0, behavior: 'smooth'});
                 return;
             }
-            // Use scrollIntoView for smoother section transitions
             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }      
     };
     
     const [showContact, setShowContact] = useState(false);
     
-    // Calculate responsive font size based on screen width
     const getTitleSize = () => {
         if (isMobile) return '2.5rem';
         if (isLargeScreen) return '6rem';
@@ -55,9 +46,10 @@ export default function HomePage(){
 
     return (
          <> 
+         
          <Contact showContact={showContact} onClose={() => setShowContact(false)}/>
 
-         {/* Home section - full viewport height */}
+
          <div className="section-container video-background" id="Home">
             <video src="background.mp4" muted autoPlay loop id="myVideo"></video>
             <br />
@@ -70,8 +62,6 @@ export default function HomePage(){
                 <br />
             </div>
          </div>
-
-        {/* About section - full viewport height */}
         <div className="section-container" id="About Me" style={{
             backgroundImage: `url('background.png')`, 
             backgroundRepeat: 'no-repeat', 
@@ -104,7 +94,7 @@ export default function HomePage(){
             <AboutPage isLargeScreen={isLargeScreen} />
 
         </div> 
-
+        
         <div className="section-container" id="Experience" style={{
             backgroundImage: `url('work.png')`, 
             backgroundRepeat: 'no-repeat', 
@@ -132,8 +122,10 @@ export default function HomePage(){
                 Experience
                 <Button onClick={() => handleClick('Projects')} className='buttonClass' variant="dark" size={isLargeScreen ? "lg" : undefined}>↓</Button>{' '}
             </h1>
-            <div style={{ flex: '1' }}>
-                <WorkPage isLargeScreen={isLargeScreen} />
+            <div style={{ flex: '1' , paddingBottom: '20px'}}>
+                
+                <TimelineEx style={{marginBottom: '300px'}}/>
+                <div id="tooltip-root"></div>
             </div>
 
         </div>
